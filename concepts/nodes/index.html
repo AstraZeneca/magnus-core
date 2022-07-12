@@ -1,0 +1,1803 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Pipelines made easy">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Node - Magnus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nodes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Magnus" class="md-header__button md-logo" aria-label="Magnus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Magnus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Node
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Magnus" class="md-nav__button md-logo" aria-label="Magnus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Magnus
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/example/" class="md-nav__link">
+        Example Run
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/brief-concepts-input/" class="md-nav__link">
+        Explanation - input
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/brief-concepts-output/" class="md-nav__link">
+        Explanation - output
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/example-deployment/" class="md-nav__link">
+        Example Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/wrap-up/" class="md-nav__link">
+        Wrap up
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/why-magnus/" class="md-nav__link">
+        Why magnus
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Concepts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Concepts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Node
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Node
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    Task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    Success
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fail" class="md-nav__link">
+    Fail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel" class="md-nav__link">
+    Parallel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dag" class="md-nav__link">
+    Dag
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#as-is" class="md-nav__link">
+    As-Is
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing_data" class="md-nav__link">
+    Passing data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    Extensions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-types/" class="md-nav__link">
+        Command types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dag/" class="md-nav__link">
+        Dag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Catalog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Catalog" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Catalog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalog/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalog-implementations/do-nothing/" class="md-nav__link">
+        Do Nothing Catalog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalog-implementations/file-system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalog-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Secrets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Secrets" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Secrets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secrets/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secrets-implementations/dot-env/" class="md-nav__link">
+        Dot Env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secrets-implementations/do-nothing/" class="md-nav__link">
+        Do Nothing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secrets-implementations/env-secrets-manager/" class="md-nav__link">
+        Env Secrets Manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secrets-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Run Log
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Run Log" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Run Log
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-log/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-log-implementations/bufferred/" class="md-nav__link">
+        Buffered
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-log-implementations/file-system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-log-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Integration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Compute Mode
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Compute Mode" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Compute Mode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes-implementations/local/" class="md-nav__link">
+        Local
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes-implementations/local-container/" class="md-nav__link">
+        Local Container
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes-implementations/demo-renderer/" class="md-nav__link">
+        Demo Renderer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Command Line
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Command Line" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Command Line
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../command-line/" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Extensions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Extensions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Extensions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/extensions/" class="md-nav__link">
+        Guide to Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RELEASES/" class="md-nav__link">
+        Releases
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="nodes">Nodes<a class="headerlink" href="#nodes" title="Permanent link">&para;</a></h1>
+<hr />
+<p>Nodes are fundamentally the smallest logical unit of work that you want to execute. Though there is no explicit
+guidelines on how big or small a node should be, we advice that the node becomes a part of narrative of the
+whole project.</p>
+<p>For example, lets take a scenario where you perform some data cleaning task before you are ready to transform/train
+a machine learning model. The data cleaning task could be one single <em>task</em> node or single <em>dag</em> node
+(which internally is a graph) if you have too many steps. The choice is completely yours to make and
+depends on the narrative of the project.</p>
+<p>Nodes in magnus can be logically split into 3 types:</p>
+<ul>
+<li>
+<p><strong>Execution</strong>: fundamentally this is a <strong>python function call or Shell command</strong> that you want to call as part of the
+pipeline. Task and As-Is node is the only nodes of this type.</p>
+</li>
+<li>
+<p><strong>Status</strong>: nodes that denote the eventual status of a graph/sub-graph. Success or Fail nodes are
+examples of this type. All dag definitions should have <strong>one and exactly one</strong> node of this type and
+the status of the dag is basically the type of status node it hits at the end.</p>
+</li>
+<li>
+<p><strong>Composite</strong>: nodes that are <strong>sub-graphs</strong> by itself. Parallel, Dag and Map are examples of this type and
+all three have different use cases. Nesting of composite nodes is possible, though we advise to keep the
+nesting simple to promote readability.</p>
+</li>
+</ul>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Node names cannot have . or % in them.
+Any valid python string is acceptable as a name of the step.</p>
+</div>
+<hr />
+<h2 id="task">Task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h2>
+<p>The smallest executable of the pipeline or in python language, the function call that you want to call as
+part of the the pipeline. In magnus, a task node has the following configuration.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">step name</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">retry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># Defaults to 1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">  </span><span class="nt">next</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">command_type</span><span class="p">:</span><span class="w"> </span><span class="c1"># Defaults to python</span><span class="w"></span>
+<span class="w">  </span><span class="nt">on_failure</span><span class="p">:</span><span class="w">  </span><span class="c1"># Defaults to None</span><span class="w"></span>
+<span class="w">  </span><span class="nt">mode_config</span><span class="p">:</span><span class="w"> </span><span class="c1"># Defaults to None</span><span class="w"></span>
+<span class="w">  </span><span class="nt">catalog</span><span class="p">:</span><span class="w"> </span><span class="c1"># Defaults to None</span><span class="w"></span>
+<span class="w">    </span><span class="nt">compute_data_folder</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">put</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<h3 id="command_required">command (required)<a class="headerlink" href="#command_required" title="Permanent link">&para;</a></h3>
+<p>The name of the actual function/shell executable you want to call as part of the pipeline.</p>
+<p>For example, for the following function, the command would be <code>my_module.my_cool_function</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># In my_module.py</span>
+
+<span class="k">def</span> <span class="nf">my_cool_function</span><span class="p">():</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h3 id="command_type_optional">command_type (optional)<a class="headerlink" href="#command_type_optional" title="Permanent link">&para;</a></h3>
+<p>Defaults to python if nothing is provided. For more information, please refer <a href="../command-types">command types</a></p>
+<h3 id="retry_optional">retry (optional)<a class="headerlink" href="#retry_optional" title="Permanent link">&para;</a></h3>
+<p>The number of attempts to make before failing the node. Default to 1.</p>
+<h3 id="next_required">next (required)<a class="headerlink" href="#next_required" title="Permanent link">&para;</a></h3>
+<p>The name of the node in the graph to go if the node succeeds.</p>
+<h3 id="on_failure_optional">on_failure (optional)<a class="headerlink" href="#on_failure_optional" title="Permanent link">&para;</a></h3>
+<p>The name of the node in the graph to go if the node fails.
+This is optional as we would move to the fail node of the graph if one is not provided.</p>
+<p>On_failure could be an use case where you want to send a failure notification before marking the run as failure.</p>
+<h3 id="mode_config_optional">mode_config (optional)<a class="headerlink" href="#mode_config_optional" title="Permanent link">&para;</a></h3>
+<p>Use this section to pass instructions to the executor.
+For example, we can instruct the <code>local-container</code> mode to use a different docker image to run this step of the
+pipeline.</p>
+<p>Example usage of mode_config:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">mode</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local-container</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">docker_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python:3.7</span><span class="w"></span>
+
+<span class="nt">dag</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cool function</span><span class="w"></span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Cool function</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module.my_cool_function</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Clean Up</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Clean Up</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clean_up.sh</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shell</span><span class="w"></span>
+<span class="w">      </span><span class="nt">mode_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">docker_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu:latest</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Success</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Fail</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+</code></pre></div>
+<p>In the above example, while all the steps except for <code>Clean Up</code> happen in python3.7 docker image, the <code>Clean Up</code>
+happens in Ubuntu.</p>
+<p>mode_config provides a way for dag to have customizable instructions to the executor.</p>
+<h3 id="catalog_optional">catalog (optional)<a class="headerlink" href="#catalog_optional" title="Permanent link">&para;</a></h3>
+<p>compute_data_folder: The folder where we need to sync-in or sync-out the data to the <a href="../catalog">catalog</a>.
+If it is not provided,
+it defaults to the global catalog settings.</p>
+<p>get: The files to sync-in from the catalog to the compute data folder, prior execution.</p>
+<p>put: The files to sync-out from the compute data folder to the catalog, post execution.</p>
+<p>Glob pattern naming in get or put are fully supported, internally we use
+<a href="https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.match">Pathlib match function</a>
+to match the name to pattern.</p>
+<p>Example catalog settings:
+<div class="highlight"><pre><span></span><code><span class="nt">catalog</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">compute_data_folder</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/</span><span class="w"></span>
+<span class="w">  </span><span class="nt">get</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">put</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;cleaned*&#39;</span><span class="w"></span>
+</code></pre></div>
+In this, we sync-in all the files from the catalog to the compute data folder, data prior to the execution and
+sync-out all files started with <em>cleaned</em> to the catalog after the execution.</p>
+<p><br>
+Logically, magnus does the following when executing a task:</p>
+<ol>
+<li>Check the catalog-get list for any files that have to be synced to compute data folder.</li>
+<li>Inspect the function call to determine the arguments required to make the function call.
+    Retrieve them from the parameters or fail if not present.</li>
+<li>Check if the function call has to executed in case of re-runs. If the previous re-run  of the step
+was successful, we skip it.</li>
+<li>Make the actual function call, if we need to, and determine the result.</li>
+<li>Check the catalog-put list for any files that have to be synced back to catalog from the compute data folder.</li>
+</ol>
+<h3 id="example_of_a_pipeline_with_one_task_node_success_node_and_failure_node">Example of a pipeline with one task node, success node and failure node.<a class="headerlink" href="#example_of_a_pipeline_with_one_task_node_success_node_and_failure_node" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">dag</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cool function</span><span class="w"></span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Cool function</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module.my_cool_function</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Success</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Fail</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+</code></pre></div>
+<h2 id="success">Success<a class="headerlink" href="#success" title="Permanent link">&para;</a></h2>
+<p>A status node of the graph. There should be <strong>one and only one</strong> success node per graph.
+The traversal of the graph stops at this node with marking the run as success.
+In magnus, this node can be configured as:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">step name</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+</code></pre></div>
+<p>No other fields are required and should not be provided.</p>
+<h2 id="fail">Fail<a class="headerlink" href="#fail" title="Permanent link">&para;</a></h2>
+<p>A status node of the graph. There should be <strong>one and only one</strong> fail node per graph.
+The traversal of the graph stops at this node with marking the run as fail. In magnus, this node can be configured as:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">step name</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+</code></pre></div>
+<p>No other fields are required and should not be provided.</p>
+<h2 id="parallel">Parallel<a class="headerlink" href="#parallel" title="Permanent link">&para;</a></h2>
+<p>Parallel node is a composite node that in it-self has sub-graphs. A good example is to construct independent
+features of a training data in machine learning experiments. The number of branches in parallel node is static
+and pre-determined. Each branch follows the same definition language as the graph.</p>
+<p>The configuration of a parallel node could be done as:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">step name</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parallel</span><span class="w"></span>
+<span class="w">  </span><span class="nt">next</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">on_failure</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branch_a</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branch_b</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
+</code></pre></div>
+<h3 id="next_required_1">next (required)<a class="headerlink" href="#next_required_1" title="Permanent link">&para;</a></h3>
+<p>The name of the node in the graph to go if the node succeeds</p>
+<h3 id="on_failure_optional_1">on_failure (optional)<a class="headerlink" href="#on_failure_optional_1" title="Permanent link">&para;</a></h3>
+<p>The name of the node in the graph to go if the node fails.
+This is optional as we would move to the fail node of the graph if one is not provided.</p>
+<p>on_failure could be an use case where you want to send a failure notification before marking the run as failure.</p>
+<h3 id="branches_required">branches (required)<a class="headerlink" href="#branches_required" title="Permanent link">&para;</a></h3>
+<p>The branches of the step that you want to parallelize. Each branch follows the same definition as a dag in itself.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">Feature generation</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">parallel</span><span class="w"></span>
+<span class="w">  </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ML training</span><span class="w"></span>
+<span class="w">  </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">One hot encoding</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">encoder</span><span class="w"></span>
+<span class="w">      </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">encoder</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">          </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success_state</span><span class="w"></span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_encoder.encode</span><span class="w"></span>
+<span class="w">        </span><span class="nt">success_state</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">        </span><span class="nt">fail_state</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Scaler</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scale</span><span class="w"></span>
+<span class="w">      </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">scale</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">          </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success_state</span><span class="w"></span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_scaler.scale</span><span class="w"></span>
+<span class="w">        </span><span class="nt">success_state</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">        </span><span class="nt">fail_state</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+</code></pre></div>
+<p>In the example, "One hot encoding" and "Scaler" are two branches that are defined using the same definition
+language as a dag and both together form the Feature generation step of the parent dag.</p>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A parallel state in the dag is just a definition, the actual implementation depends upon the mode
+and the support for parallelization.</p>
+</div>
+<hr />
+<h2 id="dag">Dag<a class="headerlink" href="#dag" title="Permanent link">&para;</a></h2>
+<p>Dag is a composite node which has one branch defined elsewhere. It is used to logically separate the complex details
+of a pipeline into modular units. For example, a typical data science project would have a data gathering, data
+cleaning, data transformation, modelling, prediction as steps. And it is understandable that these individual steps
+could get complex and require many steps to function. Instead of complicating the parent pipeline, we can abstract the
+individual steps into its own dag nodes.</p>
+<p>The configuration of a dag node is:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">step name</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dag</span><span class="w"></span>
+<span class="w">  </span><span class="nt">dag_definition</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">next</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">on_failure</span><span class="p">:</span><span class="w"> </span><span class="c1"># optional</span><span class="w"></span>
+</code></pre></div>
+<h3 id="dag_definition">dag_definition<a class="headerlink" href="#dag_definition" title="Permanent link">&para;</a></h3>
+<p>The yaml file containing the dag definition in "dag" block of the file. The dag definition should follow the same rules
+as any other dag in magnus.</p>
+<h3 id="next_required_2">next (required)<a class="headerlink" href="#next_required_2" title="Permanent link">&para;</a></h3>
+<p>The name of the node in the graph to go if the node succeeds</p>
+<h3 id="on_failure_optional_2">on_failure (optional)<a class="headerlink" href="#on_failure_optional_2" title="Permanent link">&para;</a></h3>
+<p>The name of the node in the graph to go if the node fails.
+This is optional as we would move to the fail node of the graph if one is not provided.</p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Parent dag</span><span class="w"></span>
+<span class="nt">dag</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data Cleaning</span><span class="w"></span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Data Cleaning</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dag</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data Transformation</span><span class="w"></span>
+<span class="w">      </span><span class="nt">dag_definition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data-cleaning.yaml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Data Transformation</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dag</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Modelling</span><span class="w"></span>
+<span class="w">      </span><span class="nt">dag_definition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data-transformation.yaml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Modelling</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dag</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span><span class="w"></span>
+<span class="w">      </span><span class="nt">dag_definition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">modelling.yaml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Success</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Fail</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># data-cleaning.yaml</span><span class="w"></span>
+<span class="nt">dag</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove numbers</span><span class="w"></span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Remove numbers</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Remove special characters</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data_cleaning.remove_numbers</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Remove special characters</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dag</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data_cleaning.remove_special_characters</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Success</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Fail</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+</code></pre></div>
+<p>In this example, the parent dag only captures the high level tasks required to perform a data science experiment
+while the details of how data cleaning should be done are mentioned in data-cleaning.yaml.</p>
+<h2 id="map">Map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h2>
+<p>Map is a composite node consisting of one branch that can be iterated over a parameter. A typical use case would be
+performing the same data cleaning operation on a bunch of files or the columns of a data frame. The parameter over which
+the branch is iterated over should be provided and also be available to the dag at the execution time.</p>
+<p>The configuration of the map node:
+<div class="highlight"><pre><span></span><code><span class="nt">step name</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">map</span><span class="w"></span>
+<span class="w">  </span><span class="nt">iterate_on</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">iterate_as</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">next</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">on_failure</span><span class="p">:</span><span class="w"> </span><span class="c1"># Optional</span><span class="w"></span>
+<span class="w">  </span><span class="nt">branch</span><span class="p">:</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="iterate_on_required">iterate_on (required)<a class="headerlink" href="#iterate_on_required" title="Permanent link">&para;</a></h3>
+<p>The name of the parameter to iterate on. The parameter should be of type List in python and should be available in the
+parameter space.</p>
+<h3 id="iterate_as_required">iterate_as (required)<a class="headerlink" href="#iterate_as_required" title="Permanent link">&para;</a></h3>
+<p>The name of the argument that is expected by the task.</p>
+<p>For example:</p>
+<ul>
+<li>Set a parameter by name x which is a list [1, 2, 3]</li>
+<li>A python task node as part of the map dag definition expects this argument as x_i as part function signature.</li>
+<li>You should set <code>iterate_on</code> as <code>x</code> and <code>iterate_as</code> as <code>x_i</code></li>
+</ul>
+<h3 id="branch_required">branch (required)<a class="headerlink" href="#branch_required" title="Permanent link">&para;</a></h3>
+<p>The branch to iterate over the parameter. The branch definition should follow the same rules as a dag definition.</p>
+<h3 id="next_required_3">next (required)<a class="headerlink" href="#next_required_3" title="Permanent link">&para;</a></h3>
+<p>The name of the node in the graph to go if the node succeeds</p>
+<h3 id="on_failure_optional_3">on_failure (optional)<a class="headerlink" href="#on_failure_optional_3" title="Permanent link">&para;</a></h3>
+<p>The name of the node in the graph to go if the node fails.
+This is optional as we would move to the fail node of the graph if one is not provided.</p>
+<h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">dag</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">List files</span><span class="w"></span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">List files</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Clean files</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module.list_files</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Clean files</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">map</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span><span class="w"></span>
+<span class="w">      </span><span class="nt">iterate_on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">file_list</span><span class="w"></span>
+<span class="w">      </span><span class="nt">iterate_as</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">file_name</span><span class="w"></span>
+<span class="w">      </span><span class="nt">branch</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Task Clean Files</span><span class="w"></span>
+<span class="w">        </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">Task Clean Files</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">            </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module.clean_file</span><span class="w"></span>
+<span class="w">            </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">          </span><span class="nt">success</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">          </span><span class="nt">fail</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Success</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Fail</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+</code></pre></div>
+<p>In this example dag definition,</p>
+<ul>
+<li>We start with the step <em>List files</em>, that generates a list of files to be cleaned and sets it as a parameter</li>
+<li>The step <em>Clean files</em> contains a branch that would be iterated over the list of files found in the previous step.</li>
+</ul>
+<p>To be comprehensive, here is the stub implementations of the python code</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># in my_module.py</span>
+
+<span class="k">def</span> <span class="nf">list_files</span><span class="p">():</span>
+    <span class="n">file_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+    <span class="c1"># do some compute to figure out the actual list of files would be</span>
+    <span class="c1"># By returning a dictionary, you can set parameters that would be available for down stream steps.</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;file_list&#39;</span> <span class="p">:</span> <span class="n">file_list</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">clean_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="c1"># Retrieve the file or use catalog to retrieve the file and perform the cleaning steps</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A map state in the dag is just a definition, the actual implementation depends upon the mode
+and the support for parallelization.</p>
+</div>
+<hr />
+<h2 id="as-is">As-Is<a class="headerlink" href="#as-is" title="Permanent link">&para;</a></h2>
+<p>As-is a convenience node or a designers node. It can be used to mock nodes while designing the overall pipeline design
+without implementing anything in <em>interactive</em> modes. The same node can be used to render required
+templates in <em>orchestration</em> modes.</p>
+<p>The configuration of as-is node:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">step name</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">as-is</span><span class="w"></span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">next</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">render_string</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+<h3 id="command_optional">command (optional)<a class="headerlink" href="#command_optional" title="Permanent link">&para;</a></h3>
+<p>The command is purely optional in as-is node and even if one is provided it is not executed.</p>
+<h3 id="next_required_4">next (required)<a class="headerlink" href="#next_required_4" title="Permanent link">&para;</a></h3>
+<p>The name of the node in the graph to go if the node succeeds</p>
+<h3 id="render_string_optional">render_string (optional)<a class="headerlink" href="#render_string_optional" title="Permanent link">&para;</a></h3>
+<p>The placeholder template you want to render during translation.</p>
+<h3 id="example_as_mock_node">Example as mock node<a class="headerlink" href="#example_as_mock_node" title="Permanent link">&para;</a></h3>
+<p>A very typical data science project workflow could be mocked by:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">dag</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A mocked data science pipeline</span><span class="w"></span>
+<span class="w">  </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data Cleaning</span><span class="w"></span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Data Cleaning</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">as-ias</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data Transformation</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Data Transformation</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">as-is</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Modelling</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Modelling</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">as-is</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Deploy</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">as-is</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Success</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Fail</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+</code></pre></div>
+<p>In this example, we only wrote a skeleton of the pipeline and none of the steps are actually implemented.</p>
+<h3 id="example_as_template">Example as template<a class="headerlink" href="#example_as_template" title="Permanent link">&para;</a></h3>
+<p>Taking the same example, we can imagine that there is an executor which can deploy the trained ML model and requires
+a template to be generated as part of the continuos integration.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">mode</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;some mode which deploys trained models&gt;</span><span class="w"></span>
+
+<span class="nt">dag</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A mocked data science pipeline</span><span class="w"></span>
+<span class="w">  </span><span class="nt">start_at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data Cleaning</span><span class="w"></span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Data Cleaning</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module.data_cleaning</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data Transformation</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Data Transformation</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module.data_transformation</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Modelling</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Modelling</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task</span><span class="w"></span>
+<span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module.modelling</span><span class="w"></span>
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Deploy</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">as-is</span><span class="w"></span>
+<span class="w">      </span><span class="nt">render_string</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">         </span><span class="no">python -m my_module.check_accuracy_threshold</span><span class="w"></span>
+<span class="w">         </span><span class="no">cp models/trained_models to s3://&lt;some location&gt;</span><span class="w"></span>
+
+<span class="w">      </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Success</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">success</span><span class="w"></span>
+<span class="w">    </span><span class="nt">Fail</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fail</span><span class="w"></span>
+</code></pre></div>
+<p>In <em>interactive</em> modes the as-is does not do anything and succeeds every time but the same dag in <em>orchestrated</em> modes
+can render a template that could be part of continuos integration process.</p>
+<p>Data science and ML research teams would thrive in interactive modes, given their experimental nature of work. As-Is
+nodes gives a way to do experiments without changing the dag definition once it is ready to be deployed.</p>
+<p>As-is nodes also provide a way to inject scripts as steps for orchestrators that do not support all the
+features of magnus. For example, if an orchestrator mode of your liking does not support map state, you can
+use as-is to inject a script that behaves like a map state and triggers all the required jobs.</p>
+<h2 id="passing_data">Passing data<a class="headerlink" href="#passing_data" title="Permanent link">&para;</a></h2>
+<p>In magnus, we classify 2 kinds of data sets that can be passed around to down stream steps.</p>
+<ul>
+<li>
+<p>Data: Processed files by an upstream step should be available for downstream steps when required.
+<a href="../catalog">Catalog</a> provides the way to do this.</p>
+</li>
+<li>
+<p>Parameters: Any JSON serializable data can be passed to down stream steps.</p>
+</li>
+</ul>
+<h3 id="parameters_from_command_line">Parameters from command line<a class="headerlink" href="#parameters_from_command_line" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Changed in v0.2</p>
+</div>
+<p>Initial parameters to the application can be sent in via a parameters file.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>magnus execute --file getting-started.yaml --parameters-file parameters.yaml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># in parameters.yaml</span><span class="w"></span>
+<span class="nt">arg1 </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
+<span class="nt">arg2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span><span class="w"></span>
+</code></pre></div>
+<p>In this case, arg1 and arg2 are available as parameters to downstream steps.</p>
+<h3 id="storing_parameters">Storing parameters<a class="headerlink" href="#storing_parameters" title="Permanent link">&para;</a></h3>
+<p>Any JSON serializable dictionary returned from a task node is available as parameters to downstream steps.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">my_cool_function</span><span class="p">():</span>
+  <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;arg1&#39;</span><span class="p">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;arg2&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">}</span> <span class="p">}</span>
+</code></pre></div>
+<p>Or</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">magnus</span> <span class="kn">import</span> <span class="n">store_parameter</span>
+
+<span class="k">def</span> <span class="nf">my_cool_function</span><span class="p">():</span>
+  <span class="n">store_parameter</span><span class="p">(</span><span class="n">arg1</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;arg2&#39;</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">})</span>
+</code></pre></div>
+<p>Or</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">def</span> <span class="nf">my_cool_function</span><span class="p">():</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MAGNUS_PRM_&#39;</span> <span class="o">+</span> <span class="s1">&#39;arg1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MAGNUS_PRM_&#39;</span> <span class="o">+</span> <span class="s1">&#39;arg2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">})</span>
+</code></pre></div>
+<p>All the three above ways store arg1 and arg2 for downstream steps.</p>
+<h3 id="accessing_parameters">Accessing parameters<a class="headerlink" href="#accessing_parameters" title="Permanent link">&para;</a></h3>
+<p>Any parameters set either at command line or by upstream nodes can be accessed by:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">my_cool_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="k">pass</span>
+</code></pre></div>
+The function is inspected to find all <em>named</em> args and provided value if the key exists in the parameters.</p>
+<p>or</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">my_cool_function</span><span class="p">():</span>
+  <span class="n">arg1</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MAGNUS_PRM_arg1&#39;</span><span class="p">]</span>
+  <span class="n">arg2</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MAGNUS_PRM_arg2&#39;</span><span class="p">]</span>
+</code></pre></div>
+or</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">magnus</span> <span class="kn">import</span> <span class="n">get_parameter</span>
+
+<span class="k">def</span> <span class="nf">my_cool_function</span><span class="p">():</span>
+  <span class="n">arg1</span> <span class="o">=</span> <span class="n">get_parameter</span><span class="p">(</span><span class="s1">&#39;arg1&#39;</span><span class="p">)</span>
+  <span class="n">arg2</span> <span class="o">=</span> <span class="n">get_parameter</span><span class="p">(</span><span class="s1">&#39;arg2&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>or
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">magnus</span> <span class="kn">import</span> <span class="n">get_parameter</span>
+
+<span class="k">def</span> <span class="nf">my_cool_function</span><span class="p">():</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="n">get_parameter</span><span class="p">()</span>
+  <span class="n">arg1</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="s1">&#39;arg1&#39;</span><span class="p">]</span>
+  <span class="n">arg2</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="s1">&#39;arg2&#39;</span><span class="p">]</span>
+</code></pre></div>
+Calling get_parameter with no key returns all parameters.</p>
+<h2 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h2>
+<p>You can extend and implement your own <code>node_types</code> by extending the <code>BaseNode</code> class.</p>
+<p>The base class has the following methods with only one of the two methods to be implemented for custom implementations.</p>
+<p>If the <code>node.is_composite</code> is <code>True</code>, implement the <code>execute_as_graph</code> method.
+If the <code>node.is_composite</code> is <code>False</code>, implement the <code>execute</code> method.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Source code present at magnus/nodes.py</span>
+<span class="k">class</span> <span class="nc">BaseNode</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class with common functionality provided for a Node of a graph.</span>
+
+<span class="sd">    A node of a graph could be a</span>
+<span class="sd">        * single execution node as task, success, fail.</span>
+<span class="sd">        * Could be graph in itself as parallel, dag and map.</span>
+<span class="sd">        * could be a convenience function like as-is.</span>
+
+<span class="sd">    The name is relative to the DAG.</span>
+<span class="sd">    The internal name of the node, is absolute name in dot path convention.</span>
+<span class="sd">        This has one to one mapping to the name in the run log</span>
+<span class="sd">    The internal name of a node, should always be odd when split against dot.</span>
+
+<span class="sd">    The internal branch name, only applies for branched nodes, is the branch it belongs to.</span>
+<span class="sd">    The internal branch name should always be even when split against dot.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">node_type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">internal_name</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">execution_type</span><span class="p">,</span> <span class="n">internal_branch_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># pylint: disable=R0914,R0913</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">internal_name</span> <span class="o">=</span> <span class="n">internal_name</span>  <span class="c1">#  Dot notation naming of the steps</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">internal_branch_name</span> <span class="o">=</span> <span class="n">internal_branch_name</span>  <span class="c1"># parallel, map, dag only have internal names</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">execution_type</span> <span class="o">=</span> <span class="n">execution_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">branches</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_composite</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># Change this to True if the node is composite</span>
+
+    <span class="o">...</span>
+    <span class="c1"># Truncated base methods as they should not be changed</span>
+
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">executor</span><span class="p">,</span> <span class="n">mock</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">map_variable</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The actual function that does the execution of the command in the config.</span>
+
+<span class="sd">        Should only be implemented for task, success, fail and as-is and never for</span>
+<span class="sd">        composite nodes.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            executor (magnus.executor.BaseExecutor): The executor mode class</span>
+<span class="sd">            mock (bool, optional): Don&#39;t run, just pretend. Defaults to False.</span>
+<span class="sd">            map_variable (str, optional): The value of the map iteration variable, if part of a map node.</span>
+<span class="sd">                Defaults to &#39;&#39;.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: Base class, hence not implemented.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">execute_as_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">executor</span><span class="p">,</span> <span class="n">map_variable</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This function would be called to set up the execution of the individual</span>
+<span class="sd">        branches of a composite node.</span>
+
+<span class="sd">        Function should only be implemented for composite nodes like dag, map, parallel.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            executor (magnus.executor.BaseExecutor): The executor mode.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: Base class, hence not implemented.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</code></pre></div>
+<p>The custom extensions should be registered as part of the namespace: <code>magnus.nodes.BaseNode</code> for it to be
+loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For example, as part of your pyproject.toml</span><span class="w"></span>
+<span class="k">[tool.poetry.plugins.&quot;magnus.nodes.BaseNode&quot;]</span><span class="w"></span>
+<span class="s">&quot;mail&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;YOUR_PACKAGE:MailTeam&quot;</span><span class="w"></span>
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../getting_started/why-magnus/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Why magnus" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Why magnus
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../command-types/" class="md-footer__link md-footer__link--next" aria-label="Next: Command types" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Command types
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs", "navigation.top", "toc.integrate", "search.suggest"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

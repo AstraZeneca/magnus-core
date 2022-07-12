@@ -1,0 +1,1440 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Pipelines made easy">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Extensions - Magnus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Magnus" class="md-header__button md-logo" aria-label="Magnus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Magnus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Extensions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Magnus" class="md-nav__button md-logo" aria-label="Magnus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Magnus
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/example/" class="md-nav__link">
+        Example Run
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/brief-concepts-input/" class="md-nav__link">
+        Explanation - input
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/brief-concepts-output/" class="md-nav__link">
+        Explanation - output
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/example-deployment/" class="md-nav__link">
+        Example Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/wrap-up/" class="md-nav__link">
+        Wrap up
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/why-magnus/" class="md-nav__link">
+        Why magnus
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Concepts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Concepts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodes/" class="md-nav__link">
+        Node
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../command-types/" class="md-nav__link">
+        Command types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dag/" class="md-nav__link">
+        Dag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Catalog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Catalog" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Catalog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../catalog/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../catalog-implementations/do-nothing/" class="md-nav__link">
+        Do Nothing Catalog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../catalog-implementations/file-system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../catalog-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Secrets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Secrets" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Secrets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets-implementations/dot-env/" class="md-nav__link">
+        Dot Env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets-implementations/do-nothing/" class="md-nav__link">
+        Do Nothing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets-implementations/env-secrets-manager/" class="md-nav__link">
+        Env Secrets Manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Run Log
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Run Log" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Run Log
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-log/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bufferred/" class="md-nav__link">
+        Buffered
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Extensions
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Integration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Compute Mode
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Compute Mode" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Compute Mode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes-implementations/local/" class="md-nav__link">
+        Local
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes-implementations/local-container/" class="md-nav__link">
+        Local Container
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes-implementations/demo-renderer/" class="md-nav__link">
+        Demo Renderer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Command Line
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Command Line" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Command Line
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command-line/" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Extensions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Extensions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Extensions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/extensions/" class="md-nav__link">
+        Guide to Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../RELEASES/" class="md-nav__link">
+        Releases
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Extensions</h1>
+
+<p>To extend and implement a custom run log store, you need to over-ride the appropriate methods of the <code>Base</code> class.</p>
+<p>Most of the methods of the <code>BaseRunLogStore</code> have default implementations and need not be over-written especially
+in the case of a single file as a source of run log.</p>
+<p>Please refer to <a href="../../../extensions/extensions/"><em>Guide to extensions</em> </a> for a detailed explanation and the need for
+implementing a <em>Integration</em> pattern along with the extension.</p>
+<p>Extensions that are being actively worked on and listed to be released as part of <code>magnus-extensions</code></p>
+<ul>
+<li>
+<p>Database as a run log store: This is an example of a partitioned run log store that is thread safe and can handle
+    parallel executions by the executor.</p>
+</li>
+<li>
+<p>s3 : Using s3 to store a single JSON file as the run log.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># You can find this in the source code at: magnus/datastore.py along with a few example</span>
+<span class="c1"># implementations of buffered and file-system</span>
+<span class="k">class</span> <span class="nc">BaseRunLogStore</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The base class of a Run Log Store with many common methods implemented.</span>
+
+<span class="sd">    Note: As a general guideline, do not extract anything from the config to set class level attributes.</span>
+<span class="sd">          Integration patterns modify the config after init to change behaviors.</span>
+<span class="sd">          Access config properties using getters/property of the class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">service_name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span> <span class="ow">or</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">create_run_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a Run Log object by using the config</span>
+
+<span class="sd">        Logically the method should do the following:</span>
+<span class="sd">            * Creates a Run log</span>
+<span class="sd">            * Adds it to the db</span>
+<span class="sd">            * Return the log</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This is a base class and therefore has no default implementation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">get_run_log_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">full</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RunLog</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves a Run log from the database using the config and the run_id</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            run_id (str): The run_id of the run</span>
+<span class="sd">            full (bool): return the full run log store or only the RunLog object</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            RunLog: The RunLog object identified by the run_id</span>
+
+<span class="sd">        Logically the method should:</span>
+<span class="sd">            * Returns the run_log defined by id from the data store defined by the config</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This is a base class and therefore has no default implementation</span>
+<span class="sd">            RunLogNotFoundError: If the run log for run_id is not found in the datastore</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">put_run_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_log</span><span class="p">:</span> <span class="n">RunLog</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Puts the Run Log in the database as defined by the config</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            run_log (RunLog): The Run log of the run</span>
+
+<span class="sd">        Logically the method should:</span>
+<span class="sd">            Puts the run_log into the database</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: This is a base class and therefore has no default implementation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the parameters from the Run log defined by the run_id</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            run_id (str): The run_id of the run</span>
+
+<span class="sd">        The method should:</span>
+<span class="sd">            * Call get_run_log_by_id(run_id) to retrieve the run_log</span>
+<span class="sd">            * Return the parameters as identified in the run_log</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: A dictionary of the run_log parameters</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            RunLogNotFoundError: If the run log for run_id is not found in the datastore</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_run_log_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">run_log</span><span class="o">.</span><span class="n">parameters</span>
+
+    <span class="k">def</span> <span class="nf">set_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the parameters of the Run log with the new parameters</span>
+
+<span class="sd">        This method would over-write the parameters, if the parameter exists in the run log already</span>
+
+<span class="sd">        The method should:</span>
+<span class="sd">            * Call get_run_log_by_id(run_id) to retrieve the run_log</span>
+<span class="sd">            * Update the parameters of the run_log</span>
+<span class="sd">            * Call put_run_log(run_log) to put the run_log in the datastore</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            run_id (str): The run_id of the run</span>
+<span class="sd">            parameters (dict): The parameters to update in the run log</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            RunLogNotFoundError: If the run log for run_id is not found in the datastore</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_run_log_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="n">run_log</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">put_run_log</span><span class="p">(</span><span class="n">run_log</span><span class="o">=</span><span class="n">run_log</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_run_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Given a run_id, return the run_config used to perform the run.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            run_id (str): The run_id of the run</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: The run config used for the run</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_run_log_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">run_log</span><span class="o">.</span><span class="n">run_config</span>
+
+    <span class="k">def</span> <span class="nf">set_run_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">run_config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot; Set the run config used to run the run_id</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            run_id (str): The run_id of the run</span>
+<span class="sd">            run_config (dict): The run_config of the run</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_run_log_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="n">run_log</span><span class="o">.</span><span class="n">run_config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">run_config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">put_run_log</span><span class="p">(</span><span class="n">run_log</span><span class="o">=</span><span class="n">run_log</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">create_step_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">internal_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a step log by the name and internal name</span>
+
+<span class="sd">        The method does not update the Run Log with the step log at this point in time.</span>
+<span class="sd">        This method is just an interface for external modules to create a step log</span>
+
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): The friendly name of the step log</span>
+<span class="sd">            internal_name (str): The internal naming of the step log. The internal naming is a dot path convention</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            StepLog: A uncommitted step log object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="si">}</span><span class="s1"> Creating a Step Log: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">StepLog</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">internal_name</span><span class="o">=</span><span class="n">internal_name</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">defaults</span><span class="o">.</span><span class="n">CREATED</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_step_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">internal_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StepLog</span><span class="p">:</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a step log from the datastore for run_id and the internal naming of the step log</span>
+
+<span class="sd">        The internal naming of the step log is a dot path convention.</span>
+
+<span class="sd">        The method should:</span>
+<span class="sd">            * Call get_run_log_by_id(run_id) to retrieve the run_log</span>
+<span class="sd">            * Identify the step location by decoding the internal naming</span>
+<span class="sd">            * Return the step log</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            internal_name (str): The internal name of the step log</span>
+<span class="sd">            run_id (str): The run_id of the run</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            StepLog: The step log object for the step defined by the internal naming and run_id</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            RunLogNotFoundError: If the run log for run_id is not found in the datastore</span>
+<span class="sd">            StepLogNotFoundError: If the step log for internal_name is not found in the datastore for run_id</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="si">}</span><span class="s1"> Getting the step log: </span><span class="si">{</span><span class="n">internal_name</span><span class="si">}</span><span class="s1"> of </span><span class="si">{</span><span class="n">run_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_run_log_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="n">step_log</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">run_log</span><span class="o">.</span><span class="n">search_step_by_internal_name</span><span class="p">(</span><span class="n">internal_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">step_log</span>
+
+    <span class="k">def</span> <span class="nf">add_step_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step_log</span><span class="p">:</span> <span class="n">StepLog</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add the step log in the run log as identified by the run_id in the datastore</span>
+
+<span class="sd">        The method should:</span>
+<span class="sd">             * Call get_run_log_by_id(run_id) to retrieve the run_log</span>
+<span class="sd">             * Identify the branch to add the step by decoding the step_logs internal name</span>
+<span class="sd">             * Add the step log to the identified branch log</span>
+<span class="sd">             * Call put_run_log(run_log) to put the run_log in the datastore</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            step_log (StepLog): The Step log to add to the database</span>
+<span class="sd">            run_id (str): The run id of the run</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            RunLogNotFoundError: If the run log for run_id is not found in the datastore</span>
+<span class="sd">            BranchLogNotFoundError: If the branch of the step log for internal_name is not found in the datastore</span>
+<span class="sd">                                    for run_id</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="si">}</span><span class="s1"> Adding the step log to DB: </span><span class="si">{</span><span class="n">step_log</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_run_log_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">)</span>
+
+        <span class="n">branch_to_add</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">step_log</span><span class="o">.</span><span class="n">internal_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">branch</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">run_log</span><span class="o">.</span><span class="n">search_branch_by_internal_name</span><span class="p">(</span><span class="n">branch_to_add</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">branch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">branch</span> <span class="o">=</span> <span class="n">run_log</span>
+        <span class="n">branch</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="n">step_log</span><span class="o">.</span><span class="n">internal_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">step_log</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">put_run_log</span><span class="p">(</span><span class="n">run_log</span><span class="o">=</span><span class="n">run_log</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">create_branch_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">internal_branch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BranchLog</span><span class="p">:</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a uncommitted branch log object by the internal name given</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            internal_branch_name (str): Creates a branch log by name internal_branch_name</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            BranchLog: Uncommitted and initialized with defaults BranchLog object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Create a new BranchLog</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="si">}</span><span class="s1"> Creating a Branch Log : </span><span class="si">{</span><span class="n">internal_branch_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">BranchLog</span><span class="p">(</span><span class="n">internal_name</span><span class="o">=</span><span class="n">internal_branch_name</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">defaults</span><span class="o">.</span><span class="n">CREATED</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_branch_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">internal_branch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">BranchLog</span><span class="p">,</span> <span class="n">RunLog</span><span class="p">]:</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the branch log by the internal branch name for the run id</span>
+
+<span class="sd">        If the internal branch name is none, returns the run log</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            internal_branch_name (str): The internal branch name to retrieve.</span>
+<span class="sd">            run_id (str): The run id of interest</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            BranchLog: The branch log or the run log as requested.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_run_log_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">internal_branch_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">run_log</span>
+        <span class="n">branch</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">run_log</span><span class="o">.</span><span class="n">search_branch_by_internal_name</span><span class="p">(</span><span class="n">internal_branch_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">branch</span>
+
+    <span class="k">def</span> <span class="nf">add_branch_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_log</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">BranchLog</span><span class="p">,</span> <span class="n">RunLog</span><span class="p">],</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The method should:</span>
+<span class="sd">        # Get the run log</span>
+<span class="sd">        # Get the branch and step containing the branch</span>
+<span class="sd">        # Add the branch to the step</span>
+<span class="sd">        # Write the run_log</span>
+
+<span class="sd">        The branch log could some times be a Run log and should be handled appropriately</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            branch_log (BranchLog): The branch log/run log to add to the database</span>
+<span class="sd">            run_id (str): The run id to which the branch/run log is added</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">internal_branch_name</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">branch_log</span><span class="p">,</span> <span class="n">BranchLog</span><span class="p">):</span>
+            <span class="n">internal_branch_name</span> <span class="o">=</span> <span class="n">branch_log</span><span class="o">.</span><span class="n">internal_name</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">internal_branch_name</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">put_run_log</span><span class="p">(</span><span class="n">branch_log</span><span class="p">)</span>  <span class="c1"># type: ignore # We are dealing with base dag here</span>
+            <span class="k">return</span>
+
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_run_log_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">)</span>
+
+        <span class="n">step_name</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">internal_branch_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">step</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">run_log</span><span class="o">.</span><span class="n">search_step_by_internal_name</span><span class="p">(</span><span class="n">step_name</span><span class="p">)</span>
+
+        <span class="n">step</span><span class="o">.</span><span class="n">branches</span><span class="p">[</span><span class="n">internal_branch_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">branch_log</span>  <span class="c1"># type: ignore</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">put_run_log</span><span class="p">(</span><span class="n">run_log</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">create_attempt_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StepAttempt</span><span class="p">:</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns an uncommitted step attempt log.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            StepAttempt: An uncommitted step attempt log</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="si">}</span><span class="s1"> Creating an attempt log&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">StepAttempt</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">create_code_identity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CodeIdentity</span><span class="p">:</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates an uncommitted Code identity class</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            CodeIdentity: An uncommitted code identity class</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="si">}</span><span class="s1"> Creating Code identity&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">CodeIdentity</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">create_data_catalog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataCatalog</span><span class="p">:</span>  <span class="c1"># pylint: disable=unused-argument</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a uncommitted data catalog object</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): The name of the data catalog item to put</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DataCatalog: The DataCatalog object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="si">}</span><span class="s1"> Creating Data Catalog for </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+<p>The custom extensions should be registered as part of the namespace: <code>magnus.datastore.BaseRunLogStore</code> for it
+to be loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For example, as part of your pyproject.toml</span><span class="w"></span>
+<span class="k">[tool.poetry.plugins.&quot;magnus.datastore.BaseRunLogStore&quot;]</span><span class="w"></span>
+<span class="s">&quot;api&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;YOUR_PACKAGE:API&quot;</span><span class="w"></span>
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../file-system/" class="md-footer__link md-footer__link--prev" aria-label="Previous: File System" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              File System
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../integration/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Overview
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs", "navigation.top", "toc.integrate", "search.suggest"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

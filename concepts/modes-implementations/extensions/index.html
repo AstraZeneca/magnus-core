@@ -1,0 +1,1688 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Pipelines made easy">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Extensions - Magnus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#step_over-rides" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Magnus" class="md-header__button md-logo" aria-label="Magnus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Magnus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Extensions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Magnus" class="md-nav__button md-logo" aria-label="Magnus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Magnus
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/example/" class="md-nav__link">
+        Example Run
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/brief-concepts-input/" class="md-nav__link">
+        Explanation - input
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/brief-concepts-output/" class="md-nav__link">
+        Explanation - output
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/example-deployment/" class="md-nav__link">
+        Example Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/wrap-up/" class="md-nav__link">
+        Wrap up
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/why-magnus/" class="md-nav__link">
+        Why magnus
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Concepts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Concepts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodes/" class="md-nav__link">
+        Node
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../command-types/" class="md-nav__link">
+        Command types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dag/" class="md-nav__link">
+        Dag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Catalog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Catalog" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Catalog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../catalog/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../catalog-implementations/do-nothing/" class="md-nav__link">
+        Do Nothing Catalog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../catalog-implementations/file-system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../catalog-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Secrets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Secrets" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Secrets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets-implementations/dot-env/" class="md-nav__link">
+        Dot Env
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets-implementations/do-nothing/" class="md-nav__link">
+        Do Nothing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets-implementations/env-secrets-manager/" class="md-nav__link">
+        Env Secrets Manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secrets-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Run Log
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Run Log" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Run Log
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-log/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-log-implementations/bufferred/" class="md-nav__link">
+        Buffered
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-log-implementations/file-system/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-log-implementations/extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Integration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_8">
+          Compute Mode
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Compute Mode" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          Compute Mode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local/" class="md-nav__link">
+        Local
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-container/" class="md-nav__link">
+        Local Container
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo-renderer/" class="md-nav__link">
+        Demo Renderer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Extensions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Extensions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step_over-rides" class="md-nav__link">
+    Step over-rides
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Command Line
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Command Line" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Command Line
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command-line/" class="md-nav__link">
+        Options
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Extensions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Extensions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Extensions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/extensions/" class="md-nav__link">
+        Guide to Extensions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../RELEASES/" class="md-nav__link">
+        Releases
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Extensions</h1>
+
+<p>To extend and implement a custom compute mode, you need to over-ride the appropriate methods of the <code>Base</code> class.</p>
+<p>Most of the methods of the <code>BaseExecutor</code> have default implementations and need not be over-written in a few
+situations.</p>
+<p>Please refer to <a href="../../../extensions/extensions/"><em>Guide to extensions</em> </a> for a detailed explanation and the need for
+implementing a <em>Integration</em> pattern along with the extension along with understanding the right example for your
+extension.</p>
+<p>In summary, the extension will fall into one of the four possible possibilities:</p>
+<ul>
+<li>Magnus traverses, execution environment same as traversal. eg: local</li>
+<li>Magnus traverses, execution environment not same as traversal. eg: local-container</li>
+<li>Magnus does not traverse, execution environment not same as traversal. eg: demo-renderer</li>
+<li>Magnus does not traverse, execution environment same as traversal. eg:
+<a href="../../../examples/#advanced_use_as-is">advanced use of as-is</a></li>
+</ul>
+<p>Extensions that are being actively worked on and listed to be released as part of <code>magnus-extensions</code></p>
+<ul>
+<li>local-aws-batch : A decentralized AWS batch compute</li>
+<li>aws-step-function: Translates the dag into a Step function.</li>
+</ul>
+<h2 id="step_over-rides">Step over-rides<a class="headerlink" href="#step_over-rides" title="Permanent link">&para;</a></h2>
+<p>Individual steps can provide custom config specific to a mode implementation by using <code>mode_config</code> block in the
+step definition. An example of such over-ride can be seen in <code>local-container</code> which over-rides the default
+global docker image to run.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># You can find this in the source code at: magnus/executor.py along with a few example</span>
+<span class="c1"># implementations of local, local-container, demo-renderer</span>
+<span class="k">class</span> <span class="nc">BaseExecutor</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The skeleton of an executor class.</span>
+<span class="sd">    Any implementation of an executor should inherit this class and over-ride accordingly.</span>
+
+<span class="sd">    The logic of any dag execution is a play between three methods of this class.</span>
+
+<span class="sd">    execute_graph:</span>
+<span class="sd">        This method is responsible for traversing A graph.</span>
+<span class="sd">        The core logic is start at the start_at the graph and traverse according to the state of the execution.</span>
+<span class="sd">        execute_graph hands over the actual execution of the node to self.execute_from_graph</span>
+
+<span class="sd">        Helper method: prepare_for_graph_execution would be called prior to calling execute_graph.</span>
+<span class="sd">            Use it to modify settings if needed.</span>
+
+<span class="sd">    execute_from_graph:</span>
+<span class="sd">        This method is responsible for executing a node.</span>
+<span class="sd">        But given that a node itself could be a dag in cases of parallel, map and dag, this method handles the cases.</span>
+<span class="sd">        If the node is of type task, success, fail: we can pretty much execute it and we call self.trigger_job.</span>
+<span class="sd">        If the node is of type composite: We call the node&#39;s execute_as_graph function which internally</span>
+<span class="sd">        triggers execute_graph in-turn iteratively traverses the graph.</span>
+
+
+<span class="sd">    execute_node:</span>
+<span class="sd">        This method is where the actual execution of the work happens.</span>
+<span class="sd">        This method is already in the compute environment of the mode.</span>
+<span class="sd">        Use prepare_node_for_execution to adjust settings.</span>
+<span class="sd">        The base class is given an implementation and in most cases should not be touched.</span>
+
+<span class="sd">        Helper method: prepare_for_node_execution would be called prior to calling execute_node.</span>
+<span class="sd">            Use it to modify settings if needed</span>
+
+<span class="sd">    The above logic holds good when we are in interactive compute mode i.e. local, local-container, local-aws-batch</span>
+
+<span class="sd">    But in 3rd party orchestration mode, we might have to render the job specifications and the roles might be different</span>
+
+<span class="sd">    Please see the implementations of local, local-container, local-aws-batch to perform interactive compute.</span>
+<span class="sd">    And demo-renderer to see an example of what a 3rd party executor looks like.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">service_name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="c1"># pylint: disable=R0914,R0913</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+        <span class="c1"># The remaining would be attached later</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipeline_file</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variables_file</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dag</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_cached</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">previous_run_log</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dag_hash</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">catalog_handler</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">secrets_handler</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variables_file</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">configuration_file</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parameters_file</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">is_parallel_execution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>  <span class="c1"># pylint: disable=R0201</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Controls the parallelization of branches in map and parallel state.</span>
+<span class="sd">        Defaults to False and left for the compute modes to decide.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the mode allows parallel execution of branches.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">defaults</span><span class="o">.</span><span class="n">ENABLE_PARALLEL</span>
+
+    <span class="k">def</span> <span class="nf">set_up_run_log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a run log and put that in the run log store</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">create_run_log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="n">run_log</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag</span>
+        <span class="n">run_log</span><span class="o">.</span><span class="n">use_cached</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">run_log</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">defaults</span><span class="o">.</span><span class="n">PROCESSING</span>
+        <span class="n">run_log</span><span class="o">.</span><span class="n">dag_hash</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dag_hash</span>
+
+        <span class="n">parameters</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters_file</span><span class="p">:</span>
+            <span class="n">parameters</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">load_yaml</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters_file</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">previous_run_log</span><span class="p">:</span>
+            <span class="n">run_log</span><span class="o">.</span><span class="n">original_run_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">previous_run_log</span><span class="o">.</span><span class="n">run_id</span>
+            <span class="c1"># Sync the previous run log catalog to this one.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">catalog_handler</span><span class="o">.</span><span class="n">sync_between_runs</span><span class="p">(</span><span class="n">previous_run_id</span><span class="o">=</span><span class="n">run_log</span><span class="o">.</span><span class="n">original_run_id</span><span class="p">,</span> <span class="n">run_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+            <span class="n">run_log</span><span class="o">.</span><span class="n">use_cached</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">previous_run_log</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+        <span class="n">run_log</span><span class="o">.</span><span class="n">parameters</span> <span class="o">=</span> <span class="n">parameters</span>
+
+        <span class="c1"># Update run_config</span>
+        <span class="n">run_log</span><span class="o">.</span><span class="n">run_config</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_run_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">put_run_log</span><span class="p">(</span><span class="n">run_log</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">prepare_for_graph_execution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method would be called prior to calling execute_graph.</span>
+<span class="sd">        Perform any steps required before doing the graph execution.</span>
+
+<span class="sd">        The most common implementation is to prepare a run log for the run if the run uses local interactive compute.</span>
+
+<span class="sd">        But in cases of actual rendering the job specs (eg: AWS step functions, K8&#39;s) we need not do anything.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">integration</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="p">)</span>
+        <span class="n">integration</span><span class="o">.</span><span class="n">configure_for_traversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="p">)</span>
+
+        <span class="n">integration</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">catalog_handler</span><span class="p">)</span>
+        <span class="n">integration</span><span class="o">.</span><span class="n">configure_for_traversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">catalog_handler</span><span class="p">)</span>
+
+        <span class="n">integration</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">secrets_handler</span><span class="p">)</span>
+        <span class="n">integration</span><span class="o">.</span><span class="n">configure_for_traversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">secrets_handler</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_up_run_log</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">prepare_for_node_execution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">BaseNode</span><span class="p">,</span> <span class="n">map_variable</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform any modifications to the services prior to execution of the node.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node (Node): [description]</span>
+<span class="sd">            map_variable (dict, optional): [description]. Defaults to None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">integration</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="p">)</span>
+        <span class="n">integration</span><span class="o">.</span><span class="n">configure_for_execution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="p">)</span>
+
+        <span class="n">integration</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">catalog_handler</span><span class="p">)</span>
+        <span class="n">integration</span><span class="o">.</span><span class="n">configure_for_execution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">catalog_handler</span><span class="p">)</span>
+
+        <span class="n">integration</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">secrets_handler</span><span class="p">)</span>
+        <span class="n">integration</span><span class="o">.</span><span class="n">configure_for_execution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">secrets_handler</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sync_catalog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">BaseNode</span><span class="p">,</span> <span class="n">step_log</span><span class="p">:</span> <span class="n">datastore</span><span class="o">.</span><span class="n">StepLog</span><span class="p">,</span> <span class="n">stage</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">synced_catalogs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        1). Identify the catalog settings by over-riding node settings with the global settings.</span>
+<span class="sd">        2). For stage = get:</span>
+<span class="sd">                Identify the catalog items that are being asked to get from the catalog</span>
+<span class="sd">                And copy them to the local compute data folder</span>
+<span class="sd">        3). For stage = put:</span>
+<span class="sd">                Identify the catalog items that are being asked to put into the catalog</span>
+<span class="sd">                Copy the items from local compute folder to the catalog</span>
+<span class="sd">        4). Add the items onto the step log according to the stage</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node (Node): The current node being processed</span>
+<span class="sd">            step_log (datastore.StepLog): The step log corresponding to that node</span>
+<span class="sd">            stage (str): One of get or put</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">stage</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;put&#39;</span><span class="p">]:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s1">&#39;Catalog service only accepts get/put possible actions as part of node execution.&#39;</span>
+                <span class="sa">f</span><span class="s1">&#39;Sync catalog of the executor: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="si">}</span><span class="s1"> asks for </span><span class="si">{</span><span class="n">stage</span><span class="si">}</span><span class="s1"> which is not accepted&#39;</span>
+            <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="n">node_catalog_settings</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_catalog_settings</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">node_catalog_settings</span> <span class="ow">and</span> <span class="n">stage</span> <span class="ow">in</span> <span class="n">node_catalog_settings</span><span class="p">):</span>
+            <span class="c1"># Nothing to get/put from the catalog</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="c1"># Local compute data folder over rides the global one</span>
+        <span class="n">compute_data_folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">catalog_handler</span><span class="o">.</span><span class="n">compute_data_folder</span>
+        <span class="k">if</span> <span class="s1">&#39;compute_data_folder&#39;</span> <span class="ow">in</span> <span class="n">node_catalog_settings</span> <span class="ow">and</span> <span class="n">node_catalog_settings</span><span class="p">[</span><span class="s1">&#39;compute_data_folder&#39;</span><span class="p">]:</span>
+            <span class="n">compute_data_folder</span> <span class="o">=</span> <span class="n">node_catalog_settings</span><span class="p">[</span><span class="s1">&#39;compute_data_folder&#39;</span><span class="p">]</span>
+
+        <span class="n">data_catalogs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">name_pattern</span> <span class="ow">in</span> <span class="n">node_catalog_settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">stage</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]:</span>  <span class="c1">#  Assumes a list</span>
+            <span class="n">data_catalogs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">catalog_handler</span><span class="p">,</span> <span class="n">stage</span><span class="p">)(</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">name_pattern</span><span class="p">,</span> <span class="n">run_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span> <span class="n">compute_data_folder</span><span class="o">=</span><span class="n">compute_data_folder</span><span class="p">,</span>
+                <span class="n">synced_catalogs</span><span class="o">=</span><span class="n">synced_catalogs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">data_catalogs</span><span class="p">:</span>
+            <span class="n">step_log</span><span class="o">.</span><span class="n">add_data_catalogs</span><span class="p">(</span><span class="n">data_catalogs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">data_catalogs</span>
+
+    <span class="k">def</span> <span class="nf">execute_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">BaseNode</span><span class="p">,</span> <span class="n">map_variable</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This is the entry point when we do the actual execution of the function.</span>
+<span class="sd">        Over-ride this function to do what the executor has to do for the actual function call</span>
+<span class="sd">        Most frequently, this core logic should not be touched either in interactive mode or 3rd party orchestration</span>
+<span class="sd">        mode.</span>
+
+<span class="sd">        While in interactive mode, we just compute, in 3rd party interactive mode, we call this function from the CLI</span>
+
+<span class="sd">        In most cases,</span>
+<span class="sd">            * We get the corresponding step_log of the node and the parameters.</span>
+<span class="sd">            * We sync the catalog to GET any data sets that are in the catalog</span>
+<span class="sd">            * We call the execute method of the node for the actual compute and retry it as many times as asked.</span>
+<span class="sd">            * If the node succeeds, we get any of the user defined metrics provided by the user.</span>
+<span class="sd">            * We sync the catalog to PUT any data sets that are in the catalog.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node (Node): The node to execute</span>
+<span class="sd">            map_variable (dict, optional): If the node is of a map state, map_variable is the value of the iterable.</span>
+<span class="sd">                        Defaults to None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">max_attempts</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_max_attempts</span><span class="p">()</span>
+        <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">step_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">get_step_log</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_step_log_name</span><span class="p">(</span><span class="n">map_variable</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+
+        <span class="n">parameters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">get_parameters</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="n">interaction</span><span class="o">.</span><span class="n">store_parameter</span><span class="p">(</span><span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+
+        <span class="n">data_catalogs_get</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sync_catalog</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">step_log</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="s1">&#39;get&#39;</span><span class="p">)</span>
+
+        <span class="n">mock</span> <span class="o">=</span> <span class="n">step_log</span><span class="o">.</span><span class="n">mock</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Trying to execute node: </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">internal_name</span><span class="si">}</span><span class="s1">, attempt : </span><span class="si">{</span><span class="n">attempts</span><span class="si">}</span><span class="s1">, max_attempts: </span><span class="si">{</span><span class="n">max_attempts</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">attempts</span> <span class="o">&lt;</span> <span class="n">max_attempts</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">attempt_log</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">executor</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock</span><span class="o">=</span><span class="n">mock</span><span class="p">,</span>
+                                           <span class="n">map_variable</span><span class="o">=</span><span class="n">map_variable</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="n">attempt_log</span><span class="o">.</span><span class="n">attempt_number</span> <span class="o">=</span> <span class="n">attempts</span>
+                <span class="n">step_log</span><span class="o">.</span><span class="n">attempts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attempt_log</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">attempt_log</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">defaults</span><span class="o">.</span><span class="n">FAIL</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">()</span>
+
+                <span class="n">step_log</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">defaults</span><span class="o">.</span><span class="n">SUCCESS</span>
+                <span class="n">step_log</span><span class="o">.</span><span class="n">user_defined_metrics</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_tracked_data</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_user_set_parameters</span><span class="p">(</span><span class="n">remove</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+                <span class="k">break</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">_e</span><span class="p">:</span>  <span class="c1"># pylint: disable=W0703</span>
+                <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Node: </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s1"> failed with exception </span><span class="si">{</span><span class="n">_e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="c1"># Remove any steps data</span>
+                <span class="n">utils</span><span class="o">.</span><span class="n">get_tracked_data</span><span class="p">()</span>
+                <span class="n">utils</span><span class="o">.</span><span class="n">get_user_set_parameters</span><span class="p">(</span><span class="n">remove</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">attempts</span> <span class="o">==</span> <span class="n">max_attempts</span><span class="p">:</span>
+                <span class="n">step_log</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">defaults</span><span class="o">.</span><span class="n">FAIL</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s1"> failed, max retries of </span><span class="si">{</span><span class="n">max_attempts</span><span class="si">}</span><span class="s1"> reached&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sync_catalog</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">step_log</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="n">synced_catalogs</span><span class="o">=</span><span class="n">data_catalogs_get</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">add_step_log</span><span class="p">(</span><span class="n">step_log</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_code_identities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">BaseNode</span><span class="p">,</span> <span class="n">step_log</span><span class="p">:</span> <span class="n">datastore</span><span class="o">.</span><span class="n">StepLog</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add code identities specific to the implementation.</span>
+
+<span class="sd">        The Base class has an implementation of adding git code identities.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            step_log (object): The step log object</span>
+<span class="sd">            node (BaseNode): The node we are adding the step log for</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">step_log</span><span class="o">.</span><span class="n">code_identities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">get_git_code_identity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">execute_from_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">BaseNode</span><span class="p">,</span> <span class="n">map_variable</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This is the entry point to from the graph execution.</span>
+
+<span class="sd">        While the self.execute_graph is responsible for traversing the graph, this function is responsible for</span>
+<span class="sd">        actual execution of the node.</span>
+
+<span class="sd">        If the node type is:</span>
+<span class="sd">            * task : We can delegate to execute_node after checking the eligibility for re-run in cases of a re-run</span>
+<span class="sd">            * success: We can delegate to execute_node</span>
+<span class="sd">            * fail: We can delegate to execute_node</span>
+
+<span class="sd">        For nodes that are internally graphs:</span>
+<span class="sd">            * parallel: Delegate the responsibility of execution to the node.execute_as_graph()</span>
+<span class="sd">            * dag: Delegate the responsibility of execution to the node.execute_as_graph()</span>
+<span class="sd">            * map: Delegate the responsibility of execution to the node.execute_as_graph()</span>
+
+<span class="sd">        Check the implementations of local, local-container, local-aws-batch for different examples of implementation</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node (Node): The node to execute</span>
+<span class="sd">            map_variable (dict, optional): If the node if of a map state, this corresponds to the value of iterable.</span>
+<span class="sd">                    Defaults to None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">step_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">create_step_log</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">get_step_log_name</span><span class="p">(</span><span class="n">map_variable</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_code_identities</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="p">,</span> <span class="n">step_log</span><span class="o">=</span><span class="n">step_log</span><span class="p">)</span>
+
+        <span class="n">step_log</span><span class="o">.</span><span class="n">step_type</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">node_type</span>
+        <span class="n">step_log</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">defaults</span><span class="o">.</span><span class="n">PROCESSING</span>
+
+        <span class="c1"># Add the step log to the database as per the situation.</span>
+        <span class="c1"># If its a terminal node, complete it now</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">node_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;fail&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">add_step_log</span><span class="p">(</span><span class="n">step_log</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">execute_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">map_variable</span><span class="o">=</span><span class="n">map_variable</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># If previous run was successful, move on to the next step</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_eligible_for_rerun</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">map_variable</span><span class="o">=</span><span class="n">map_variable</span><span class="p">):</span>
+            <span class="n">step_log</span><span class="o">.</span><span class="n">mock</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">step_log</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">defaults</span><span class="o">.</span><span class="n">SUCCESS</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">add_step_log</span><span class="p">(</span><span class="n">step_log</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># We call an internal function to iterate the sub graphs and execute them</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">is_composite</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">add_step_log</span><span class="p">(</span><span class="n">step_log</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">execute_as_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">map_variable</span><span class="o">=</span><span class="n">map_variable</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Executor specific way to trigger a job</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">add_step_log</span><span class="p">(</span><span class="n">step_log</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trigger_job</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="p">,</span> <span class="n">map_variable</span><span class="o">=</span><span class="n">map_variable</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">trigger_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">BaseNode</span><span class="p">,</span> <span class="n">map_variable</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Executor specific way of triggering jobs.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node (BaseNode): The node to execute</span>
+<span class="sd">            map_variable (str, optional): If the node if of a map state, this corresponds to the value of iterable.</span>
+<span class="sd">                    Defaults to &#39;&#39;.</span>
+
+<span class="sd">        Raises: NotImplementedError Base class hence not implemented</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">get_status_and_next_node_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_node</span><span class="p">:</span> <span class="n">BaseNode</span><span class="p">,</span> <span class="n">dag</span><span class="p">:</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">map_variable</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Given the current node and the graph, returns the name of the next node to execute.</span>
+
+<span class="sd">        The name is always relative the graph that the node resides in.</span>
+
+<span class="sd">        If the current node succeeded, we return the next node as per the graph.</span>
+<span class="sd">        If the current node failed, we return the on failure node of the node (if provided) or the global one.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            current_node (BaseNode): The current node.</span>
+<span class="sd">            dag (Graph): The dag we are traversing.</span>
+<span class="sd">            map_variable (dict): If the node belongs to a map branch.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">step_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">get_step_log</span><span class="p">(</span><span class="n">current_node</span><span class="o">.</span><span class="n">get_step_log_name</span><span class="p">(</span><span class="n">map_variable</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;Finished executing the node </span><span class="si">{</span><span class="n">current_node</span><span class="si">}</span><span class="s1"> with status </span><span class="si">{</span><span class="n">step_log</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="n">next_node_name</span> <span class="o">=</span> <span class="n">current_node</span><span class="o">.</span><span class="n">get_next_node</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">step_log</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">defaults</span><span class="o">.</span><span class="n">FAIL</span><span class="p">:</span>
+            <span class="n">next_node_name</span> <span class="o">=</span> <span class="n">dag</span><span class="o">.</span><span class="n">get_fail_node</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>
+            <span class="k">if</span> <span class="n">current_node</span><span class="o">.</span><span class="n">get_on_failure_node</span><span class="p">():</span>
+                <span class="n">next_node_name</span> <span class="o">=</span> <span class="n">current_node</span><span class="o">.</span><span class="n">get_on_failure_node</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">step_log</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="n">next_node_name</span>
+
+    <span class="k">def</span> <span class="nf">execute_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dag</span><span class="p">:</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">map_variable</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The parallelization is controlled by the nodes and not by this function.</span>
+
+<span class="sd">        Logically the method should:</span>
+<span class="sd">            * Start at the dag.start_at of the dag.</span>
+<span class="sd">            * Call the self.execute_from_graph(node)</span>
+<span class="sd">            * depending upon the status of the execution, either move to the success node or failure node.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dag (Graph): The directed acyclic graph to traverse and execute.</span>
+<span class="sd">            map_variable (dict, optional): If the node if of a map state, this corresponds to the value of the iterable.</span>
+<span class="sd">                    Defaults to None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">current_node</span> <span class="o">=</span> <span class="n">dag</span><span class="o">.</span><span class="n">start_at</span>
+        <span class="n">previous_node</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Running the execution with </span><span class="si">{</span><span class="n">current_node</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">working_on</span> <span class="o">=</span> <span class="n">dag</span><span class="o">.</span><span class="n">get_node_by_name</span><span class="p">(</span><span class="n">current_node</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">previous_node</span> <span class="o">==</span> <span class="n">current_node</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Potentially running in a infinite loop&#39;</span><span class="p">)</span>
+
+            <span class="n">previous_node</span> <span class="o">=</span> <span class="n">current_node</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Creating execution log for </span><span class="si">{</span><span class="n">working_on</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">execute_from_graph</span><span class="p">(</span><span class="n">working_on</span><span class="p">,</span> <span class="n">map_variable</span><span class="o">=</span><span class="n">map_variable</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="n">status</span><span class="p">,</span> <span class="n">next_node_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_status_and_next_node_name</span><span class="p">(</span>
+                <span class="n">current_node</span><span class="o">=</span><span class="n">working_on</span><span class="p">,</span> <span class="n">dag</span><span class="o">=</span><span class="n">dag</span><span class="p">,</span> <span class="n">map_variable</span><span class="o">=</span><span class="n">map_variable</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="n">defaults</span><span class="o">.</span><span class="n">TRIGGERED</span><span class="p">:</span>
+                <span class="c1"># Some nodes go into triggered state and self traverse</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Triggered the job to execute the node </span><span class="si">{</span><span class="n">current_node</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="k">break</span>
+
+            <span class="k">if</span> <span class="n">working_on</span><span class="o">.</span><span class="n">node_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="s1">&#39;fail&#39;</span><span class="p">]:</span>
+                <span class="k">break</span>
+
+            <span class="n">current_node</span> <span class="o">=</span> <span class="n">next_node_name</span>
+
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">get_branch_log</span><span class="p">(</span><span class="n">working_on</span><span class="o">.</span><span class="n">get_branch_log_name</span><span class="p">(</span><span class="n">map_variable</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+
+        <span class="n">branch</span> <span class="o">=</span> <span class="s1">&#39;graph&#39;</span>
+        <span class="k">if</span> <span class="n">working_on</span><span class="o">.</span><span class="n">internal_branch_name</span><span class="p">:</span>
+            <span class="n">branch</span> <span class="o">=</span> <span class="n">working_on</span><span class="o">.</span><span class="n">internal_branch_name</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Finished execution of the </span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s1"> with status </span><span class="si">{</span><span class="n">run_log</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">run_log</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">is_eligible_for_rerun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">BaseNode</span><span class="p">,</span> <span class="n">map_variable</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        In case of a re-run, this method checks to see if the previous run step status to determine if a re-run is</span>
+<span class="sd">        necessary.</span>
+<span class="sd">            * True: If its not a re-run.</span>
+<span class="sd">            * True: If its a re-run and we failed in the last run or the corresponding logs do not exist.</span>
+<span class="sd">            * False: If its a re-run and we succeeded in the last run.</span>
+
+<span class="sd">        Most cases, this logic need not be touched</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node (Node): The node to check against re-run</span>
+<span class="sd">            map_variable (dict, optional): If the node if of a map state, this corresponds to the value of iterable..</span>
+<span class="sd">                        Defaults to None.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: Eligibility for re-run. True means re-run, False means skip to the next step.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">previous_run_log</span><span class="p">:</span>
+            <span class="n">node_step_log_name</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_step_log_name</span><span class="p">(</span><span class="n">map_variable</span><span class="o">=</span><span class="n">map_variable</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Scanning previous run logs for node logs of: </span><span class="si">{</span><span class="n">node_step_log_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="n">previous_node_log</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">previous_node_log</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">previous_run_log</span><span class="o">.</span><span class="n">search_step_by_internal_name</span><span class="p">(</span><span class="n">node_step_log_name</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">StepLogNotFoundError</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Did not find the node </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> in previous run log&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># We should re-run the node.</span>
+
+            <span class="n">step_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">get_step_log</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get_step_log_name</span><span class="p">(</span><span class="n">map_variable</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The original step status: </span><span class="si">{</span><span class="n">previous_node_log</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">previous_node_log</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">defaults</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The step </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> is marked success, not executing it&#39;</span><span class="p">)</span>
+                <span class="n">step_log</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">defaults</span><span class="o">.</span><span class="n">SUCCESS</span>
+                <span class="n">step_log</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Node execution successful in previous run, skipping it&#39;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">add_step_log</span><span class="p">(</span><span class="n">step_log</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># We need not run the node</span>
+
+            <span class="c1"># Remove previous run log to start execution from this step</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The new execution should start executing graph from this node </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">previous_run_log</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">send_return_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="s1">&#39;traversal&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convenience function used by pipeline to send return code to the caller of the cli</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            Exception: If the pipeline execution failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">run_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_id</span>
+
+        <span class="n">run_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_log_store</span><span class="o">.</span><span class="n">get_run_log_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">,</span> <span class="n">full</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">run_log</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">defaults</span><span class="o">.</span><span class="n">FAIL</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Pipeline execution failed&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">resolve_node_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">BaseNode</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The mode_config section can contain specific over-rides to an global executor config.</span>
+<span class="sd">        To avoid too much clutter in the dag definition, we allow the configuration file to have placeholders block.</span>
+<span class="sd">        The nodes can over-ride the global config by referring to key in the placeholder.</span>
+
+<span class="sd">        For example:</span>
+<span class="sd">        # configuration.yaml</span>
+<span class="sd">        mode:</span>
+<span class="sd">          type: cloud-implementation</span>
+<span class="sd">          config:</span>
+<span class="sd">            k1: v1</span>
+<span class="sd">            k3: v3</span>
+<span class="sd">            placeholders:</span>
+<span class="sd">              k2: v2 # Could be a mapping internally.</span>
+
+<span class="sd">        # in pipeline definition.yaml</span>
+<span class="sd">        dag:</span>
+<span class="sd">          steps:</span>
+<span class="sd">            step1:</span>
+<span class="sd">              mode_config:</span>
+<span class="sd">                cloud-implementation:</span>
+<span class="sd">                  k1: value_specific_to_node</span>
+<span class="sd">                  k2:</span>
+
+<span class="sd">        This method should resolve the node_config to {&#39;k1&#39;: &#39;value_specific_to_node&#39;, &#39;k2&#39;: &#39;v2&#39;, &#39;k3&#39;: &#39;v3&#39;}</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node (BaseNode): The current node being processed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">effective_node_config</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">ctx_node_config</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get_mode_config</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">service_name</span><span class="p">)</span>
+
+        <span class="n">placeholders</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;placeholders&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">ctx_node_config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">placeholders</span><span class="p">:</span>  <span class="c1"># Update via placeholder only if value is None</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">effective_node_config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">placeholders</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+                    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Expected value to the </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> to be a mapping but found </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">placeholders</span><span class="p">[</span><span class="n">key</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="k">continue</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> in the </span><span class="si">{</span><span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> mode_config, there is no value provided and no </span><span class="se">\</span>
+<span class="s2">                    corresponding placeholder was found&quot;</span><span class="p">)</span>
+
+            <span class="n">effective_node_config</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="n">effective_node_config</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;placeholders&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">effective_node_config</span>
+</code></pre></div>
+<p>The custom extensions should be registered as part of the namespace: <code>magnus.executor.BaseExecutor</code> for it to be
+loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For example, as part of your pyproject.toml</span><span class="w"></span>
+<span class="k">[tool.poetry.plugins.&quot;magnus.executor.BaseExecutor&quot;]</span><span class="w"></span>
+<span class="s">&quot;gcp&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;YOUR_PACKAGE:GCP&quot;</span><span class="w"></span>
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../demo-renderer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Demo Renderer" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Demo Renderer
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../command-line/" class="md-footer__link md-footer__link--next" aria-label="Next: Options" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Options
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs", "navigation.top", "toc.integrate", "search.suggest"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
