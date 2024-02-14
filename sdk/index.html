@@ -1,0 +1,2427 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Pipelines made easy">
+      
+      
+      
+      
+        <link rel="prev" href="../interactions/">
+      
+      
+        <link rel="next" href="../extensions/">
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Python SDK - Magnus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#magnus.Catalog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Magnus" class="md-header__button md-logo" aria-label="Magnus" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Magnus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python SDK
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AstraZeneca/magnus-core" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  Magnus
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../concepts/the-big-picture/" class="md-tabs__link">
+          
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../configurations/overview/" class="md-tabs__link">
+          
+  
+  Configurations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../interactions/" class="md-tabs__link">
+        
+  
+    
+  
+  Python API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Python SDK
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../extensions/" class="md-tabs__link">
+        
+  
+    
+  
+  Extensions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../roadmap/" class="md-tabs__link">
+        
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Magnus" class="md-nav__button md-logo" aria-label="Magnus" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Magnus
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AstraZeneca/magnus-core" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Magnus
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Magnus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Example
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Example
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/dataflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flow of data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/reproducibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reproducibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/experiment-tracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Experiment tracking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/secrets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secrets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example/retry-after-failure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Retry failures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-magnus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why magnus?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/the-big-picture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tl;dr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/executor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Executor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/run-log/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run log
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/catalog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/experiment-tracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Experiment tracking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/secrets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secrets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Nodes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Nodes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/stub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/task/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/parallel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parallel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/nesting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nesting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Configurations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Configurations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Executor
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Executor
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/executors/local/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    local
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/executors/mocked/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mocked
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/executors/local-container/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    local-container
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/executors/argo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    argo workflows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/executors/container-environments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    container environments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/run-log/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run log
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/catalog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Catalog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/secrets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secrets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configurations/experiment-tracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Experiment tracking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interactions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Python SDK
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Python SDK
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#magnus.Catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Catalog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnus.Stub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnus.Task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnus.Parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnus.Map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnus.Success" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnus.Fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnus.Pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Python SDK</h1>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="magnus.Catalog" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">magnus.Catalog</span>
+
+
+<a href="#magnus.Catalog" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>Use to instruct a task to sync data from/to the central catalog.
+Please refer to <a href="../concepts/catalog/">concepts</a> for more information.</p>
+
+
+
+  <p>Attributes:</p>
+  <ul>
+      <li class="field-body">
+        <b><code><span title="magnus.Catalog.get">get</span></code></b>
+            (<code><span title="typing.List">List</span>[str]</code>)
+        –
+        <div class="doc-md-description">
+          <p>List of glob patterns to get from central catalog to the compute data folder.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Catalog.put">put</span></code></b>
+            (<code><span title="typing.List">List</span>[str]</code>)
+        –
+        <div class="doc-md-description">
+          <p>List of glob patterns to put into central catalog from the compute data folder.</p>
+        </div>
+      </li>
+  </ul>
+
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">magnus</span> <span class="kn">import</span> <span class="n">Catalog</span><span class="p">,</span> <span class="n">Task</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">catalog</span> <span class="o">=</span> <span class="n">Catalog</span><span class="p">(</span><span class="n">compute_data_folder</span><span class="o">=</span><span class="s2">&quot;/path/to/data&quot;</span><span class="p">,</span> <span class="n">get</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*.csv&quot;</span><span class="p">],</span> <span class="n">put</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;*.csv&quot;</span><span class="p">])</span>
+</span></code></pre></div>
+    <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">task</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;task&quot;</span><span class="p">,</span> <span class="n">catalog</span><span class="o">=</span><span class="n">catalog</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s2">&quot;echo &#39;hello&#39;&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div><hr style="border:2px dotted orange">
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="magnus.Stub" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">magnus.Stub</span>
+
+
+<a href="#magnus.Stub" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>A node that does nothing.</p>
+<p>A stub node can tak arbitrary number of arguments.
+Please refer to <a href="../concepts/stub/">concepts</a> for more information.</p>
+
+
+
+  <p>Attributes:</p>
+  <ul>
+      <li class="field-body">
+        <b><code><span title="magnus.Stub.name">name</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the node.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Stub.terminate_with_failure">terminate_with_failure</span></code></b>
+            (<code>bool</code>)
+        –
+        <div class="doc-md-description">
+          <p>Whether to terminate the pipeline with a failure after this node.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Stub.terminate_with_success">terminate_with_success</span></code></b>
+            (<code>bool</code>)
+        –
+        <div class="doc-md-description">
+          <p>Whether to terminate the pipeline with a success after this node.</p>
+        </div>
+      </li>
+  </ul>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div><hr style="border:2px dotted orange">
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="magnus.Task" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">magnus.Task</span>
+
+
+<a href="#magnus.Task" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>An execution node of the pipeline.
+Please refer to <a href="../concepts/task/">concepts</a> for more information.</p>
+
+
+
+  <p>Attributes:</p>
+  <ul>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.name">name</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the node.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.command">command</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The command to execute.</p>
+<ul>
+<li>For python functions, <a href="../concepts/task/#python_functions">dotted path</a> to the function.</li>
+<li>For shell commands: command to execute in the shell.</li>
+<li>For notebooks: path to the notebook.</li>
+</ul>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.command_type">command_type</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The type of command to execute.
+Can be one of "shell", "python", or "notebook".</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.catalog">catalog</span></code></b>
+            (<code><span title="typing.Optional">Optional</span>[<a class="autorefs autorefs-internal" title="magnus.sdk.Catalog" href="#magnus.Catalog">Catalog</a>]</code>)
+        –
+        <div class="doc-md-description">
+          <p>The catalog to sync data from/to.
+Please see Catalog about the structure of the catalog.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.overrides">overrides</span></code></b>
+            (<code><span title="typing.Dict">Dict</span>[str, <span title="typing.Any">Any</span>]</code>)
+        –
+        <div class="doc-md-description">
+          <p>Any overrides to the command.
+Individual tasks can override the global configuration config by referring to the
+specific override.</p>
+<p>For example,</p>
+<h5 id="magnus.Task--global_configuration">Global configuration<a class="headerlink" href="#magnus.Task--global_configuration" title="Permanent link">&para;</a></h5>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">executor</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local-container</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">docker_image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;magnus/magnus:latest&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">overrides</span><span class="p">:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">custom_docker_image</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">docker_image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;magnus/magnus:custom&quot;</span>
+</span></code></pre></div>
+<h5 id="magnus.Task--task_specific_configuration">Task specific configuration<a class="headerlink" href="#magnus.Task--task_specific_configuration" title="Permanent link">&para;</a></h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">task</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;task&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s2">&quot;echo &#39;hello&#39;&quot;</span><span class="p">,</span> <span class="n">command_type</span><span class="o">=</span><span class="s2">&quot;shell&quot;</span><span class="p">,</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        <span class="n">overrides</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;local-container&#39;</span><span class="p">:</span> <span class="n">custom_docker_image</span><span class="p">})</span>
+</span></code></pre></div>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.notebook_output_path">notebook_output_path</span></code></b>
+            (<code><span title="typing.Optional">Optional</span>[str]</code>)
+        –
+        <div class="doc-md-description">
+          <p>The path to save the notebook output.
+Only used when command_type is 'notebook', defaults to command+_out.ipynb</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.optional_ploomber_args">optional_ploomber_args</span></code></b>
+            (<code><span title="typing.Optional">Optional</span>[<span title="typing.Dict">Dict</span>[str, <span title="typing.Any">Any</span>]]</code>)
+        –
+        <div class="doc-md-description">
+          <p>Any optional ploomber args.
+Only used when command_type is 'notebook', defaults to {}</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.output_cell_tag">output_cell_tag</span></code></b>
+            (<code><span title="typing.Optional">Optional</span>[str]</code>)
+        –
+        <div class="doc-md-description">
+          <p>The tag of the output cell.
+Only used when command_type is 'notebook', defaults to "magnus_output"</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.terminate_with_failure">terminate_with_failure</span></code></b>
+            (<code>bool</code>)
+        –
+        <div class="doc-md-description">
+          <p>Whether to terminate the pipeline with a failure after this node.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.terminate_with_success">terminate_with_success</span></code></b>
+            (<code>bool</code>)
+        –
+        <div class="doc-md-description">
+          <p>Whether to terminate the pipeline with a success after this node.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Task.on_failure">on_failure</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the node to execute if the step fails.</p>
+        </div>
+      </li>
+  </ul>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div><hr style="border:2px dotted orange">
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="magnus.Parallel" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">magnus.Parallel</span>
+
+
+<a href="#magnus.Parallel" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>A node that executes multiple branches in parallel.
+Please refer to <a href="../concepts/parallel/">concepts</a> for more information.</p>
+
+
+
+  <p>Attributes:</p>
+  <ul>
+      <li class="field-body">
+        <b><code><span title="magnus.Parallel.name">name</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the node.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Parallel.branches">branches</span></code></b>
+            (<code><span title="typing.Dict">Dict</span>[str, <a class="autorefs autorefs-internal" title="magnus.sdk.Pipeline" href="#magnus.Pipeline">Pipeline</a>]</code>)
+        –
+        <div class="doc-md-description">
+          <p>A dictionary of branches to execute in parallel.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Parallel.terminate_with_failure">terminate_with_failure</span></code></b>
+            (<code>bool</code>)
+        –
+        <div class="doc-md-description">
+          <p>Whether to terminate the pipeline with a failure after this node.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Parallel.terminate_with_success">terminate_with_success</span></code></b>
+            (<code>bool</code>)
+        –
+        <div class="doc-md-description">
+          <p>Whether to terminate the pipeline with a success after this node.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Parallel.on_failure">on_failure</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the node to execute if any of the branches fail.</p>
+        </div>
+      </li>
+  </ul>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div><hr style="border:2px dotted orange">
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="magnus.Map" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">magnus.Map</span>
+
+
+<a href="#magnus.Map" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>A node that iterates over a list of items and executes a pipeline for each item.
+Please refer to <a href="../concepts/map/">concepts</a> for more information.</p>
+
+
+
+  <p>Attributes:</p>
+  <ul>
+      <li class="field-body">
+        <b><code><span title="magnus.Map.branch">branch</span></code></b>
+            (<code>&#39;Pipeline&#39;</code>)
+        –
+        <div class="doc-md-description">
+          <p>The pipeline to execute for each item.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Map.iterate_on">iterate_on</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the parameter to iterate over.
+The parameter should be defined either by previous steps or statically at the start of execution.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Map.iterate_as">iterate_as</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the iterable to be passed to functions.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Map.overrides">overrides</span></code></b>
+            (<code><span title="typing.Dict">Dict</span>[str, <span title="typing.Any">Any</span>]</code>)
+        –
+        <div class="doc-md-description">
+          <p>Any overrides to the command.</p>
+        </div>
+      </li>
+  </ul>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div><hr style="border:2px dotted orange">
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="magnus.Success" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">magnus.Success</span>
+
+
+<a href="#magnus.Success" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>A node that represents a successful execution of the pipeline.</p>
+<p>Most often, there is no need to use this node as nodes can be instructed to
+terminate_with_success and pipeline with add_terminal_nodes=True.</p>
+
+
+
+  <p>Attributes:</p>
+  <ul>
+      <li class="field-body">
+        <b><code><span title="magnus.Success.name">name</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the node.</p>
+        </div>
+      </li>
+  </ul>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div><hr style="border:2px dotted orange">
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="magnus.Fail" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">magnus.Fail</span>
+
+
+<a href="#magnus.Fail" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>A node that represents a failed execution of the pipeline.</p>
+<p>Most often, there is no need to use this node as nodes can be instructed to
+terminate_with_failure and pipeline with add_terminal_nodes=True.</p>
+
+
+
+  <p>Attributes:</p>
+  <ul>
+      <li class="field-body">
+        <b><code><span title="magnus.Fail.name">name</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the node.</p>
+        </div>
+      </li>
+  </ul>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div><hr style="border:2px dotted orange">
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="magnus.Pipeline" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">magnus.Pipeline</span>
+
+
+<a href="#magnus.Pipeline" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents first">
+
+  
+      <p>A Pipeline is a directed acyclic graph of Steps that define a workflow.</p>
+
+
+
+  <p>Attributes:</p>
+  <ul>
+      <li class="field-body">
+        <b><code><span title="magnus.Pipeline.steps">steps</span></code></b>
+            (<code><span title="typing.List">List</span>[<a class="autorefs autorefs-internal" title="magnus.sdk.Stub" href="#magnus.Stub">Stub</a> | <a class="autorefs autorefs-internal" title="magnus.sdk.Task" href="#magnus.Task">Task</a> | <a class="autorefs autorefs-internal" title="magnus.sdk.Parallel" href="#magnus.Parallel">Parallel</a> | <a class="autorefs autorefs-internal" title="magnus.sdk.Map" href="#magnus.Map">Map</a> | <a class="autorefs autorefs-internal" title="magnus.sdk.Success" href="#magnus.Success">Success</a> | <a class="autorefs autorefs-internal" title="magnus.sdk.Fail" href="#magnus.Fail">Fail</a>]</code>)
+        –
+        <div class="doc-md-description">
+          <p>A list of Steps that make up the Pipeline.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Pipeline.start_at">start_at</span></code></b>
+            (<code><a class="autorefs autorefs-internal" title="magnus.sdk.Stub" href="#magnus.Stub">Stub</a> | <a class="autorefs autorefs-internal" title="magnus.sdk.Task" href="#magnus.Task">Task</a> | <a class="autorefs autorefs-internal" title="magnus.sdk.Parallel" href="#magnus.Parallel">Parallel</a> | <a class="autorefs autorefs-internal" title="magnus.sdk.Map" href="#magnus.Map">Map</a></code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the first Step in the Pipeline.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Pipeline.name">name</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>The name of the Pipeline. Defaults to "".</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Pipeline.description">description</span></code></b>
+            (<code>str</code>)
+        –
+        <div class="doc-md-description">
+          <p>A description of the Pipeline. Defaults to "".</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code><span title="magnus.Pipeline.add_terminal_nodes">add_terminal_nodes</span></code></b>
+            (<code>bool</code>)
+        –
+        <div class="doc-md-description">
+          <p>Whether to add terminal nodes to the Pipeline. Defaults to True.</p>
+        </div>
+      </li>
+  </ul>
+      <p>The default behavior is to add "success" and "fail" nodes to the Pipeline.
+To add custom success and fail nodes, set add_terminal_nodes=False and create success
+and fail nodes manually.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="magnus.Pipeline.execute" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">execute</span>
+
+
+<a href="#magnus.Pipeline.execute" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">execute</span><span class="p">(</span><span class="n">configuration_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">parameters_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">use_cached</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">defaults</span><span class="o">.</span><span class="n">LOG_LEVEL</span><span class="p">,</span> <span class="n">output_pipeline_definition</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;magnus-pipeline.yaml&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p><em>Execute</em> the Pipeline.</p>
+<p>Execution of pipeline could either be:</p>
+<p>Traverse and execute all the steps of the pipeline, eg. <a href="../configurations/executors/local/">local execution</a>.</p>
+<p>Or create the <code>yaml</code> representation of the pipeline for other executors.</p>
+<p>Please refer to <a href="../concepts/executor/">concepts</a> for more information.</p>
+
+
+
+  <p>Parameters:</p>
+  <ul>
+      <li class="field-body">
+        <b><code>configuration_file</code></b>
+            (<code>str</code>, default:
+                <code>&#39;&#39;</code>
+)
+        –
+        <div class="doc-md-description">
+          <p>The path to the configuration file. Defaults to "".
+The configuration file can be overridden by the environment variable MAGNUS_CONFIGURATION_FILE.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code>run_id</code></b>
+            (<code>str</code>, default:
+                <code>&#39;&#39;</code>
+)
+        –
+        <div class="doc-md-description">
+          <p>The ID of the run. Defaults to "".</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code>tag</code></b>
+            (<code>str</code>, default:
+                <code>&#39;&#39;</code>
+)
+        –
+        <div class="doc-md-description">
+          <p>The tag of the run. Defaults to "".
+Use to group multiple runs.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code>parameters_file</code></b>
+            (<code>str</code>, default:
+                <code>&#39;&#39;</code>
+)
+        –
+        <div class="doc-md-description">
+          <p>The path to the parameters file. Defaults to "".</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code>use_cached</code></b>
+            (<code>str</code>, default:
+                <code>&#39;&#39;</code>
+)
+        –
+        <div class="doc-md-description">
+          <p>Whether to use cached results. Defaults to "".
+Provide the run_id of the older execution to recover.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code>log_level</code></b>
+            (<code>str</code>, default:
+                <code><span title="magnus.defaults.LOG_LEVEL">LOG_LEVEL</span></code>
+)
+        –
+        <div class="doc-md-description">
+          <p>The log level. Defaults to defaults.LOG_LEVEL.</p>
+        </div>
+      </li>
+      <li class="field-body">
+        <b><code>output_pipeline_definition</code></b>
+            (<code>str</code>, default:
+                <code>&#39;magnus-pipeline.yaml&#39;</code>
+)
+        –
+        <div class="doc-md-description">
+          <p>The path to the output pipeline definition file.
+Defaults to "magnus-pipeline.yaml".</p>
+<p>Only applicable for the execution via SDK for non <code>local</code> executors.</p>
+        </div>
+      </li>
+  </ul>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "header.autohide", "navigation.top", "toc.integrate", "toc.follow", "search.suggest", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.instant.progress", "navigation.tracking"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>
